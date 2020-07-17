@@ -60,6 +60,18 @@ public class Project_3_MontyHallProblem
     System.out.println("There is a prize behind one of these doors");
     System.out.println("Choose Door 0, 1, or 2!");
     String strSelectedDoor=user_input.nextLine();
+
+    //Ensure string is not null or a non-number
+    if(strSelectedDoor.matches("^[0-2]{1}$"))
+    {
+      //Do nothing
+    }
+    else
+    {
+      System.out.println("Invalid selection.");
+      userMenu();
+    }
+
     int selectedDoor = Integer.parseInt(strSelectedDoor);
     
     if ((selectedDoor<0)||(selectedDoor>2))
@@ -77,6 +89,17 @@ public class Project_3_MontyHallProblem
 
     System.out.println("Choose 1 for YES and 2 for NO.");
     String strChangeDoor=user_input.nextLine();
+
+    if(strChangeDoor.matches("^[1-2]{1}$"))
+    {
+      //Do nothing
+    }
+    else
+    {
+      System.out.println("Invalid selection.");
+      userMenu();
+    }
+
     int changeDoor = Integer.parseInt(strChangeDoor);
 
     if ((changeDoor<0)||(changeDoor>2))
@@ -133,6 +156,17 @@ public class Project_3_MontyHallProblem
     System.out.println("Select '2' to Summarize Wins and Losses");
     System.out.println("Select '3' to play Lets Make a Deal");
     String strSelection=user_input.nextLine();
+        //Ensure string is not null or a non-number
+    if(strSelection.matches("^[1-3]{1}$"))
+    {
+      //Do nothing
+    }
+    else
+    {
+      System.out.println("Invalid selection.");
+      userMenu();
+    }
+
     int intSelection = Integer.parseInt(strSelection);
 
     if(intSelection==1)
